@@ -31,7 +31,8 @@ def index():
 @app.route('/download', methods=['GET', 'POST'])
 def download():
     if request.method == 'POST':
-        return send_file('views.py', attachment_filename='views')
+        return send_file('./static/love.png',
+            as_attachment=True, attachment_filename='love.png')
     return '''Confirm Download
 <form action="/download" method="post">
         <button type="submit" formmethod="post">Click Me!</button>
